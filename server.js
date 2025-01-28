@@ -84,10 +84,10 @@ app.post("/register", async (req, res) => {
       rollNo,
       members,
     });
-
+    res.status(201).json({ message: "Registration successful!" });
     await newRegistration.save();
     console.log("✅ Data saved successfully!");
-    res.status(201).json({ message: "Registration successful!" });
+    
   } catch (error) {
     console.error("❌ Error saving data:", error);
     res.status(500).json({
